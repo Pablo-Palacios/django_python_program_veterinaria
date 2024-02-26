@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+
+{% block barra %}
+{% include "navbar.html"%}
+{% endblock %}
+
+{% block titulo_principal%}Registro de clientes{%endblock%}
+
+{%block principal%}
+<table class="table table-stripes">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Nombre del Animal</th>
+            <th>Categoria Animal</th>
+            <th>Tratamiento</th>
+        </tr>
+    </thead>
+    {% for registro in registros%}
+        <tr>
+            <td>{{registro.fecha}}</td>
+            <td>{{registro.animal}}</td>
+            <td>{{registro.animal_categoria}}</td>
+            <td>{{registro.tratamiento}}</td>
+        </tr>
+    {%endfor%}
+</table>
+{%endblock%}

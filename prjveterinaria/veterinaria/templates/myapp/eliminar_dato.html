@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+
+{%block titulo_principal%}Pagina de Eliminacion{%endblock%}
+
+{%block principal%}
+    <form method="post">
+    {%csrf_token%}
+    <h4>Deseas eliminar a {{objeto}}: {{nombre}}</h4>
+
+    <input type="submit", value="Eliminar">
+    </form>
+    {%endblock%}

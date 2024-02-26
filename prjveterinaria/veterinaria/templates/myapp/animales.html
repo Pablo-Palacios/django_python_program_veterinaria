@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% load static%}
+
+{% block barra %}
+{% include "navbar.html"%}
+{% endblock %}
+
+{%block titulo_principal%}Tabla Animales{%endblock%}
+
+{%block principal%}
+    <table class="table table-stripes">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Categoria</th>
+                <th>Dueño</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        {% for animal in animales%}
+            <tr>
+                <td>{{animal.nombre}}</td>
+                <td>{{animal.raza}}</td>
+                <td>{{animal.categoria}}</td>
+                <td>{{animal.dueño}}</td>
+                <td><a href="{% url 'modificarAnimales' animal.id %}"><img src="{% static 'img/editar.png' %}"></a></td>
+                <td><a href="{% url 'eliminarAnimal' animal.id %}"><img src="{% static 'img/eliminar.png' %}"></a></td>
+
+            </tr>
+        {%endfor%}
+    </table>
+{%endblock%}

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+.tabla_dueños{
+    border: 1px solid;
+    background-color: rgb(233, 194, 122);
+}
+
+
+
+.titulos{
+    background-color: rgb(193, 241, 223);
+    padding: 20px;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.fondotitulo{
+    background-image: url("{% static 'img/fondoblanco.avif' %}");
+    background-size: cover; /* Para cubrir todo el elemento main */
+    background-position: center; /* Para centrar la imagen */
+    background-repeat: no-repeat;
+    padding: 20px;
+    width: auto; /* Define el ancho deseado para la imagen */
+    height: auto;
+}
+
+
+
+
+footer{
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}

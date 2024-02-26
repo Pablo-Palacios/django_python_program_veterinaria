@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static%}
+
+
+{%block principal%}
+<style>
+    .inicio{
+        
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    .fotofondo {
+        
+        float: right; /* Coloca la imagen a la derecha */
+        margin-left: 20px; /* Ajusta el margen izquierdo según sea necesario */
+        margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+        margin-right: 80px;
+        
+        
+    }
+    .fotofondo img {
+    width: 450px; /* Define el ancho deseado para la imagen */
+    height: auto; /* Mantén la proporción original de la imagen */
+    }
+
+     h1{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        text-transform: uppercase;
+        padding: 20px;
+        color: rgb(0, 214, 203);
+        background-color: aliceblue;
+    }
+
+    h4{
+        margin-left: 10px;
+    }
+
+   
+    
+    .marco{
+        padding: 20px;
+        border: 15px solid rgb(0, 230, 230);
+        margin-right: 660px;
+        margin-left: 35px;
+        margin-bottom: 25px;
+        margin-top: 20px;
+    }
+
+    p{
+        padding: 10px;
+        
+    }
+    .login{
+        padding: 5px;
+        margin-right: 0px;
+        
+    }
+
+    .butonlogin{
+        padding: 5px;
+    }
+    
+    .fondotitulo{
+        background-image: url("{% static 'img/fondoblanco.avif' %}");
+        background-size: cover; /* Para cubrir todo el elemento main */
+        background-position: center; /* Para centrar la imagen */
+        background-repeat: no-repeat;
+        padding: 20px;
+        width: auto; /* Define el ancho deseado para la imagen */
+        height: auto;
+    }
+    
+    
+</style>
+
+<div class="inicio">
+    
+    <header class="fondotitulo">
+    </header>
+
+    <main>
+        <h1><strong>Proyecto Veterinaria</strong></h1>
+    </main>
+   
+    <div class="fotofondo">
+        <img src="{% static 'img/fondo.jpg' %}">
+    </div>
+        <div class="marco">
+            
+            
+            <h4><strong>Inicio</strong></h4>
+            
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores labore pariatur suscipit quas doloremque id et, cumque, deserunt numquam distinctio eaque alias exercitationem ratione veritatis veniam commodi impedit neque obcaecati.</p>
+        
+        
+            <div class="login">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card border-primary p-4">
+                                <h5 class="card-title text-center">Ingrese Usuario</h5>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <form>
+                                            <div class="form-group">
+                                            <label for="exampleInputEmail1">Username</label>
+                                            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Username">
+                                            </div>
+                                            <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                            </div>
+                                            <div class="butonlogin">
+                                                <div class="text-center">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                    
+                                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+    
+</div>
+{%endblock%}

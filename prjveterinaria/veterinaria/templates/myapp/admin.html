@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block barra %}
+{% include "navbar.html"%}
+{% endblock %}
+
+{%block principal%}
+<style>
+        .inicio{
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        .foto{
+            background-image: url("{% static 'img/endecha-plana-juguetes-plato-comida-cepillo-pelo-perros.jpg'%}");
+            background-size: cover; /* Para que la imagen cubra todo el fondo */
+            background-position: center; /* Para centrar la imagen en el fondo */
+            background-repeat: no-repeat; 
+            padding: 20px;
+            width: auto; /* Define el ancho deseado para la imagen */
+            height: auto;
+            background-color: aquamarine;
+        }
+        .marco{
+        padding: 20px;
+        border: 15px solid rgb(1, 17, 17);
+        margin-right: 660px;
+        margin-left: 35px;
+        margin-bottom: 25px;
+        margin-top: 20px;
+        }
+
+</style>
+
+
+
+    <div class="inicio">
+        <div class="foto">
+            <div class="marco">
+                
+                
+                <h4><strong>Administrador</strong></h4>
+                
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores labore pariatur suscipit quas doloremque id et, cumque, deserunt numquam distinctio eaque alias exercitationem ratione veritatis veniam commodi impedit neque obcaecati.</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+{%endblock%}

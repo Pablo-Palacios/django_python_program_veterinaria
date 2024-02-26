@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block barra %}
+{% include "navbar.html"%}
+{% endblock %}
+
+{%block principal%}
+
+    <h3 class="card-title text-center">Dueños</h3>
+
+    
+
+    <table class="table table-stripes">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Direccion</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        {%for dueño in dueños%}
+            <tr>
+                <td>{{dueño.nombre}}</td>
+                <td>{{dueño.apellido}}</td>
+                <td>{{dueño.dni}}</td>
+                <td>{{dueño.direccion}}</td>
+                <td><a href="{% url 'modificarDueño' dueño.id %}"><img src="{% static 'img/editar.png' %}"></a></td>
+                <td><a href="{% url 'eliminarDueño' dueño.id %}"><img src="{% static 'img/eliminar.png' %}"></a></td>
+            </tr>
+        {%endfor%}
+    </table>
+{%endblock%}
