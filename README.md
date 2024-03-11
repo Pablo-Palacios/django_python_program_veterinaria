@@ -1,1 +1,2 @@
-# django_python_program_veterinaria
+Hi, this is a project generated in Python using the Django library. Its functionality is based on managing the administration of a veterinary clinic, being able to load data into the sqlite3 database and visualize it in a table. It includes modules and forms incorporated into the project construction. What it lacks is a solid security foundation and it has not yet been able to run on a host. But I invite you to download it in a virtual environment and run it smoothly.
+I encountered some issues deploying it to a host, so for now, I can share the repository for you to take a look at the work. A future improvement would be to add a security system and a login mechanism to register the respective administrator.
