@@ -2,28 +2,73 @@
 {% load static%}
 
 
+
 {% block principal %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card border-primary p-4">
-                <h5 class="card-title text-center">Login</h5>
-                    <form method="post">
-                        {% csrf_token %}
-                        <form>
-                            <div class="form-group">
-                            <label for="exampleInputEmail1">Username</label>
-                            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Username">
-                            </div>
-                            <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
+<style>
+    .fondotitulo{
+        background-image: url("{% static 'img/fondoblanco.avif' %}");
+        background-size: cover; /* Para cubrir todo el elemento main */
+        background-position: center; /* Para centrar la imagen */
+        background-repeat: no-repeat;
+        padding: 20px;
+        width: auto; /* Define el ancho deseado para la imagen */
+        height: auto;
+    }
+    
+    .tit{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        text-transform: uppercase;
+        padding: 20px;
+        color: rgb(0, 214, 203);
+        background-color: aliceblue;
+    }
+
+    .caja{
+        padding-top: 50px;
+    }
+
+    .botones{
+        padding-top: 20px;
+    }
+</style>
+
+<header class="fondotitulo"></header>
+
+<main class="tit">
+    <h1><strong>Proyecto Veterinaria</strong></h1>
+</main>
+
+<div class="caja">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-primary p-4">
+                    <h5 class="card-title text-center">Login</h5>
+                        <form method="post">
+                            {% csrf_token %}
+                            <form>
+                                <div class="form-group">
+                                <label for="exampleInputEmail1">Username</label>
+                                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                </div>
+                                <div class="botones">
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                                
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<footer>
+    {% include "footer.html"%}
+</footer>
 {% endblock %}

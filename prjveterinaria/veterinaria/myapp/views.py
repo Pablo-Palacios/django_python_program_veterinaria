@@ -12,8 +12,8 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-#def index(request, template_name="myapp/index.html"):
- #   return render(request, template_name)
+def index(request, template_name="myapp/index.html"):
+   return render(request, template_name)
 
 #@login_required(redirect_field_name="log")
 def home(request, template_name="myapp/home.html"):
@@ -133,7 +133,7 @@ def get_user(request, id,template_name="user/homeUser.html"):
     users = {"user":one_user}
     return render(request, template_name, users)
 
-def login_admin(request, template_name="myapp/index.html"):
+def login_admin(request, template_name="myapp/log.html"):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -146,7 +146,7 @@ def login_admin(request, template_name="myapp/index.html"):
                 return redirect("homeUser")
         else:
             messages.success(request, "ERROR IN PASSWORD OR USERNAME")
-            return redirect("index")
+            return redirect("login")
     else:
         return render(request, template_name, {})
 
