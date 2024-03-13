@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import DueñosForms, AnimalesForms
-from .models import Dueños, Animales, RegistroConsultas, AdminUsers
+from .forms import DueñosForms, AnimalesForms, TurneroForms
+from .models import Dueños, Animales, RegistroConsultas, AdminUsers, TurnosClientes
 from django.http import HttpResponse
 import sqlite3
 from datetime import date
@@ -11,11 +11,11 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-
+@login_required(login_url="/log")
 def index(request, template_name="myapp/index.html"):
    return render(request, template_name)
 
-#@login_required(redirect_field_name="log")
+@login_required(login_url="accounts/login/")
 def home(request, template_name="myapp/home.html"):
     return render(request, template_name)
 
@@ -29,6 +29,8 @@ def homeUser(request, template_name="user/homeUser.html"):
 def homeAdmi(request, template_name="myapp/admin.html"):
     return render(request, template_name)
 
+def turnos(request, template_name="myapp/turnos.html"):
+    return render(request, template_name)
 
 # DUEÑOS
 
@@ -121,7 +123,7 @@ def eliminar_animal(request, id_pk, template_name="myapp/eliminar_dato.html"):
 
 
 # REGISTRO 
-
+@login_required(redirect_field_name="login")
 def registro_consultas(request, template_name="myapp/registros.html"):
     registros = RegistroConsultas.objects.all()
     data = {"registros":registros}
@@ -140,17 +142,19 @@ def login_admin(request, template_name="myapp/log.html"):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            if username == "admi":
-                return redirect("registros")
-            else:
-                return redirect("homeUser")
-        else:
+            return redirect("home")
+        
             messages.success(request, "ERROR IN PASSWORD OR USERNAME")
             return redirect("login")
     else:
         return render(request, template_name, {})
 
-
+#TURNOS 
+    
+def turnosForms(request, template_name="myapp/turnos.html"):
+    form = turnosForms()
+    data = {"forms":form}
+    return render(request, template_name, data)
 
 
 

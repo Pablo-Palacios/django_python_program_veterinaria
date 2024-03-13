@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Dueños, Animales, AdminUsers
+from .models import Dueños, Animales, AdminUsers, TurnosClientes
 
 class DueñosForms(ModelForm):
     class Meta:
@@ -13,9 +13,8 @@ class AnimalesForms(ModelForm):
         fields = "__all__"
 
 
-""""
-class LoginForm(forms.Form):
-    username = forms.EmailField(label="Email adress",widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'username', 'name': 'username'}))
-    password = forms.CharField(label="Password",widget=forms.PasswordInput (attrs={'class': 'form-control' , 'placeholder': 'password', 'name': 'password'}))
-"""
 
+class TurneroForms(ModelForm):
+    class Meta:
+        model = TurnosClientes
+        fields = "__all__"

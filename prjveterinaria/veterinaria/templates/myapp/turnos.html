@@ -1,0 +1,45 @@
+{%extends "base.html"%}
+{% load static%}
+
+{%block barra%}
+  {%include "navbar.html"%}
+{%endblock%}
+
+{%block principal%}
+
+<main class="">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <div class="card border-primary p-4">
+                  <h5 class="card-title text-center">Ingrese nuevo Turno</h5>
+                      <form method="post">
+                          {%csrf_token%}
+                              <form>
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">DNI</label>
+                                  <input type="number" class="form-control" name="dni"  placeholder="Dni">
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputPassword1">Nombre</label>
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputPassword1">Apellido</label>
+                                  <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputPassword1">Direccion</label>
+                                  <input type="text" class="form-control" name="direccion" placeholder="Direccion">
+                              </div>
+  
+                          <button type="submit" class="btn btn-primary">Confirmar</button>                    
+                      
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+
+
+{%endblock%}

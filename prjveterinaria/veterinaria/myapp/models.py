@@ -56,3 +56,8 @@ class AdminUsers(models.Model):
     password = models.CharField(max_length=20)
     fullname = models.CharField(null=True, blank=True, max_length=20)
 
+
+class TurnosClientes(models.Model):
+    fecha = models.DateField()
+    cliente = models.CharField(max_length=20)
+    consulta = models.CharField(max_length=2, choices=TRATAMIENTO, default="SO")

@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path("home", views.home, name="home"), 
-    path("homeUser", views.homeUser, name="homeUser"),
     path("admin", views.homeAdmi, name="admin"),
 
     # DUEÑOS 
@@ -21,10 +20,11 @@ urlpatterns = [
 
     # REGISTRO
     path("registros", views.registro_consultas, name="registros"), 
+    path("turnos", views.turnos, name="turnero"),
 
     # LOGIN 
     path("", views.index, name="index"),
-    path("log", views.login_admin, name="login")
+    path("accounts/login/", views.login_admin, name="login")
 
 
 ]
